@@ -2,7 +2,7 @@
 
 An unsupervised machine-learning tool that watches the daily **USD–INR exchange rate** and flags days when the market behaved abnormally (unusually large moves or a turbulent backdrop). The flagged days are then **backtested** against known historical stress episodes, and summarised in a **Market Stress Index** chart intended for a policy paper.
 
-The whole pipeline lives in one notebook, [`notebooks/usd_inr_surveillance.ipynb`](notebooks/usd_inr_surveillance.ipynb), organised into six stages (0–5). Every stage explains its terms in plain English and prints evidence for each claim it makes.
+The whole pipeline lives in one notebook, [`Financial_market.ipynb`](Financial_market.ipynb), organised into six stages (0–5). Every stage explains its terms in plain English and prints evidence for each claim it makes.
 
 ![Market Stress Index, full history](outputs/market_stress_index_full_history.png)
 
