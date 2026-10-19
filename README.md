@@ -4,7 +4,7 @@ An unsupervised machine-learning tool that watches the daily **USD–INR exchang
 
 The whole pipeline lives in one notebook, [`Financial_market.ipynb`](Financial_market.ipynb), organised into six stages (0–5). Every stage explains its terms in plain English and prints evidence for each claim it makes.
 
-![Market Stress Index, full history](outputs/market_stress_index_full_history.png)
+
 
 ---
 
@@ -67,22 +67,10 @@ Saves figures at 300 DPI plus CSV tables and a summary file to `outputs/`, then 
 ```
 Financial_Markets/
 ├── notebooks/
-│   └── usd_inr_surveillance.ipynb      # full pipeline, Stages 0–5
+│   Financial_market.ipynb      # full pipeline, Stages 0–5
 ├── data/
 │   └── usd_inr_raw.csv                 # frozen raw OHLC data (yfinance, USDINR=X)
-├── outputs/
-│   ├── market_stress_index_full_history.png
-│   ├── market_stress_index_zoom_2013_taper_tantrum.png
-│   ├── market_stress_index_zoom_2020_covid.png
-│   ├── feature_table_full.csv          # per-day features, scores, flags, status, stress index
-│   ├── flagged_anomaly_days.csv        # 113 flagged days, most anomalous first, with cluster + tier
-│   ├── cluster_summary.csv             # 28 clusters with candidate episode + confidence tier
-│   ├── results_summary.md              # headline numbers, generated from live variables
-│   ├── report_findings.md
-│   ├── financial_market_final_report.pdf
-│   └── images/                         # additional charts (exchange rate, returns, volatility, zooms)
-├── stage1_prompt.txt … stage5_prompt.txt, master_prompt_final.txt, findings_extraction_prompt.txt
-└── progress.md                          # build log
+
 ```
 
 ### Output column reference (`feature_table_full.csv`)
@@ -115,7 +103,7 @@ cd notebooks
 jupyter notebook usd_inr_surveillance.ipynb
 ```
 
-Run all cells from top to bottom. The notebook uses relative paths (`../data`, `../outputs`), so launch it from inside `notebooks/`. With `REFRESH_DATA = False` the run is fully offline and reproduces the results above exactly.
+
 
 ### Tunable parameters
 | Parameter | Default | Stage | Effect |
@@ -131,8 +119,4 @@ Run all cells from top to bottom. The notebook uses relative paths (`../data`, `
 
 ---
 
-## Principles and limitations
-- **No invented data:** missing or corrupted values are excluded, never imputed. Every claim is backed by printed output.
-- **Honest labelling:** only broad, well-established crisis *periods* are named as fact. Specific events and MEDIUM-tier eras are marked as needing verification against primary sources.
-- **Single data source:** an attempt to cross-check against stooq failed because the source was unreachable, so bad ticks in the yfinance data were neutralised rather than corrected. Yahoo reports no volume for FX pairs.
-- **Future work:** a GARCH volatility model is an optional refinement and is not yet implemented.
+
