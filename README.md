@@ -1,4 +1,3 @@
-# Financial-Market-Surveillance
 # USD–INR Market-Surveillance Tool
 
 An unsupervised machine-learning tool that watches the daily **USD–INR exchange rate** and flags days when the market behaved abnormally (unusually large moves or a turbulent backdrop). The flagged days are then **backtested** against known historical stress episodes, and summarised in a **Market Stress Index** chart intended for a policy paper.
